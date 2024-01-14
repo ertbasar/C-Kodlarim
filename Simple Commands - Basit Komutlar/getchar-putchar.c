@@ -15,11 +15,13 @@ int main() {
     putchar(alinan);
 
     // 'a' ise yazdır
+    printf("a yazarsan yazdırır\n");
     while (getchar() != '\n'); // newline karakterini temizle
     if ((denenen = getchar()) == 'a')
         putchar(denenen);
 
     // 'q' gelene kadar yazdırma
+    printf("q gelene kadar yazdırır\n");
     while (getchar() != '\n'); // newline temizle
     while ((denenen2 = getchar()) != 'q') {
         putchar(denenen2);
@@ -27,11 +29,12 @@ int main() {
     }
 
     // 'E' gelene kadar yazdırma (for döngüsü)
+    printf("E gelene kadar yazdırır\n");
     while (getchar() != '\n'); // newline temizle
     for (denenen3 = getchar(); denenen3 != 'E' && denenen3 != EOF; denenen3 = getchar()) {
         putchar(denenen3);
         while (getchar() != '\n'); // newline temizle
     }
-
+    printf("\n\n");
     return 0;
 }

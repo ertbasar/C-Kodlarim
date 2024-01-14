@@ -42,6 +42,7 @@ printf("%d\n", *deneme2);
     // Blok dışında da kullanılabilir
 printf("%d", *deneme2);
 //çalıştırılınca görüldüğü üzere static olduğu zaman belirli bir adresteki veri eğer değiştirlmediyse ve static ise aynı değerde devam eder. ancak auto ise veya değiştirildiyse buradaki değişkenin değeri bu bloğun dışında aynı şekilde görülmeyebilir.
+printf("\n\n");
 return 0;
 
 }
