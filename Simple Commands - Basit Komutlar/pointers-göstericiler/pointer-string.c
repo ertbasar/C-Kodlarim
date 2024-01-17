@@ -11,7 +11,7 @@ int main(void){
     //burada yukarıdaki özetteki işlemleri gerçekleştireceğim
     char deneme[] = "selam";
     char *p;
-    p = "Deneme";//işaretçi olduğundan * kullanımı yok. 
+    p = "Deneme";//işaretçi olduğundan * kullanımına gerek yok. 
     printf("%s\n%s\n",deneme, p);
     printf("İşaretçinin ilk elemanı:%c\n",*p);//p'nin ilk elemanını yazdırır.
     return 0;
