@@ -17,7 +17,7 @@ typedef struct _ADRBILGI{
 typedef struct _INSAN{
     char ad_soyad[40];
     ADRBILGI *adrbilgi;
-    void (*isimYazdır)(struct _INSAN);//içine bir adet 
+    void (*isimYazdır)(struct _INSAN);//içine bir adet fonksiyon işaretçisi yaptım ki içinden direkt kullanımı deneyeyim
 } INSAN;
 void printName(INSAN a){
     printf("%s", a.ad_soyad);
