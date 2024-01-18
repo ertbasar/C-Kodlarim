@@ -9,7 +9,7 @@ Benzer şekilde bir yapının elemanı fonksiyon göstericisi de olabilir.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//Aynı zamanda iç içe yapılara da örnek olabilir.
+//Aynı zamanda iç içe yapılara da örnek olabilir. Aslında _ADRBILGI yazmaya pek de gerek yok ancak iç içe kendini kullanacağında gereklidir. Bu yüzden bu kullanım doğru olur.
 typedef struct _ADRBILGI{
     char* adres;
     char telno[10];

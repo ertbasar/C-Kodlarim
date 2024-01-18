@@ -1,1 +1,1 @@
-INSAN a
+printf("%lu",sizeof(vektor.data));
