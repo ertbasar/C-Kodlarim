@@ -26,6 +26,13 @@ void freeQueue(QUEUE *a){
     free(a->data);
     a->capacity = 0;
 }
+//boş mu sorusuna cevap verildi
+int empty(QUEUE *a){
+    if(a->capacity==0)
+        return 1;
+    else
+        return 0;
+}
 //eleman eklemesi yapmak için
 void enqueue(QUEUE *a, int b){
     a->capacity++;//kapasite arttırıldı
@@ -37,26 +44,35 @@ void enqueue(QUEUE *a, int b){
 }
 //elemanı baştan çıkarmak için
 void dequeue(QUEUE *a){
-    for(int i = 0; i < a->capacity-1; i++)//2. 1.ye 3. 2.ye ... olacak şekilde her bir eleman bir öne kaydırıldı
-        a->data[i]=a->data[i+1];
-    a->data[a->capacity-1]=0;
-    a->capacity--;
-    a->data = realloc(a->data, sizeof(int)*a->capacity);
+    if(a->capacity==0)
+        printf("Zaten boş bir queue\n");
+    else{
+        for(int i = 0; i < a->capacity-1; i++)//2. 1.ye 3. 2.ye ... olacak şekilde her bir eleman bir öne kaydırıldı
+            a->data[i]=a->data[i+1];
+        a->data[a->capacity-1]=0;
+        a->capacity--;
+        if(a->capacity==0)//eğer artık boşsa geri sisteme verelim
+            free(a->data);
+        else
+            a->data = realloc(a->data, sizeof(int)*a->capacity);//değilse realloc edelim
+    }
+    
 }
 //öndeki eleman verildi
 int front(QUEUE *a){
-    return a->data[0];
+    if(!empty(a))
+        return a->data[0];
+    else
+        printf("Zaten boş bir queue\n");
+        return -1;
 }
 //en arkadaki eleman verildi
 int back(QUEUE *a){
-    return a->data[a->capacity-1];
-}
-//boş mu sorusuna cevap verildi
-int empty(QUEUE *a){
-    if(a->capacity==0)
-        return 1;
+    if(!empty(a))
+        return a->data[a->capacity-1];
     else
-        return 0;
+        printf("Zaten boş bir queue\n");
+        return -1;
 }
 //size için bir fonksiyon yazıldı
 int size(QUEUE *a){
