@@ -1,1 +1,1 @@
-printf("%lu",sizeof(vektor.data));
+myList
