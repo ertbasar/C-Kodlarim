@@ -64,7 +64,7 @@ void erase(SET *a, int number){
     while(i<a->size){
         if(a->data[i]==number){//sayıyı bulmaya çalışıyoruz
             for(int x = i; x < a->size-1; x++){//sayının olduğu yeri bulduktan sonra sonraki elemanları birer geriye alıyoruz
-                a->data[i] = a->data[i+1];
+                a->data[x] = a->data[x+1];
             }
             a->size--;
             a->data = (int*)realloc(a->data, sizeof(int)*a->size);//size daraltılması
@@ -100,19 +100,49 @@ void print(SET *a){
 int main(void){
     SET deneme;
     init(&deneme);
+
+    // Eleman eklemeleri
     insert(&deneme, 7);
     insert(&deneme, 4);
-    printf("ilk print:\nEleman sayısı:%d\n",size(&deneme));
-    print(&deneme);
     insert(&deneme, 12);
     insert(&deneme, 23);
-    insert(&deneme, 2);
-    erase(&deneme, 4);
-    insert(&deneme, 5);
-    printf("ikinci print:\nEleman sayısı:%d\n",size(&deneme));
+    insert(&deneme, 9);
+    insert(&deneme, 15);
+    // Kümeyi yazdırma
+    printf("Küme elemanları:\n");
     print(&deneme);
-    insert(&deneme, 5);
 
+    // Eleman silme
+    erase(&deneme, 4);
+
+    // Silme sonrası küme
+    printf("\nKüme elemanları (4 silindikten sonra):\n");
+    print(&deneme);
+
+    // Eleman kümede var mı
+    int search_number = 12;
+    int* found = find(&deneme, search_number);
+    if (found != NULL) {
+        printf("\n%d kümede bulunuyor. Adres: %p\n", search_number, (void*)found);
+    } else {
+        printf("\n%d kümede bulunmuyor.\n", search_number);
+    }
+    //2. bir kontrol
+    search_number = 355;
+    int* found2 = find(&deneme, search_number);
+    if (found2 != NULL) {
+        printf("\n%d kümede bulunuyor. Adres: %p\n", search_number, (void*)found2);
+    } else {
+        printf("\n%d kümede bulunmuyor.\n", search_number);
+    }
+
+    // Kümenin boyutu ve boş olup olmadığı
+    printf("\nKüme boyutu: %d\n", size(&deneme));
+    if (empty(&deneme)) {
+        printf("Küme boş.\n");
+    } else {
+        printf("Küme dolu.\n");
+    }
 
     return 0;
 }
