@@ -97,6 +97,11 @@ void print(SET *a){
         printf("%d\n", a->data[i]);
     }
 }
+void clear(SET *a){
+    free(a->data);
+    a->size=0;
+    return;
+}
 int main(void){
     SET deneme;
     init(&deneme);
