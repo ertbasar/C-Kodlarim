@@ -1,3 +1,3 @@
 Bu çalışmada basit bir Banka - ATM uygulaması yapmaya çalıştım. Genel olarak kullanıcı kayıt ve giriş işleminden sonra birkaç işlem daha yapılabiliyor. 
 
-Programı her açtığımızda eski veriler gitmiş olduğundan dolayı bunu bir standarta bağlama ve verileri tutma açısından bu projeyi ileride dosyadan okur ve dosyaya yazar bir şekilde geliştirmek istiyorum. Ne zamana nasip olur artık onu göreceğiz :) 
+Programı her açtığımızda eski veriler gitmiş olduğundan dolayı bunu bir standarta bağlama ve verileri tutma açısından bu projeyi ileride dosyadan okur ve dosyaya yazar bir şekilde geliştirmek istiyorum. Ne zamana nasip olur artık onu göreceğiz :) Benzer şekilde şifrelerin de direkt kendileri olmadığı bir algoritma veya kütüphaneyi de eklemeyi düşünüyorum. (password hash)
